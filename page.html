@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VERDANT — Technology for a Living Planet</title>
+<meta name="description" content="A guide to eco-friendly technologies: solar, wind, electric mobility, circular design, green hydrogen and smart grids.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#073b2b;--f2:#0a4935;--f3:#0d5940;--lime:#d7ff35;--paper:#f2f0df;--ink:#07140f;--muted:#b3c1b8;--max:1180px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--forest);color:var(--paper);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;background:radial-gradient(#fff 1px,transparent 1px) 0 0/5px 5px;z-index:90}
+a{color:inherit;text-decoration:none}
+img{width:100%;height:100%;object-fit:cover;display:block}
+.mono{font-family:"DM Mono",monospace}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(7,59,43,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(242,240,223,.25)}
+.nav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:21px;letter-spacing:-.05em}.logo span{color:var(--lime)}
+.links{display:flex;gap:26px;font-size:12px}
+.links a{opacity:.75;transition:.2s}.links a:hover{opacity:1;color:var(--lime)}
+.cta{background:var(--lime);color:var(--ink);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:9px 16px;font-weight:700;font-size:13px;transition:.2s}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+@media(max-width:760px){.links{display:none}}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;padding:56px 0 30px;align-items:center}
+.kick{font-size:12px;color:var(--lime);display:flex;align-items:center;gap:10px}
+.kick::before{content:"";width:36px;height:2px;background:var(--lime)}
+.hero h1{font-size:clamp(58px,9.5vw,128px);line-height:.84;letter-spacing:-.07em;margin-top:26px}
+.o{color:transparent;-webkit-text-stroke:2px var(--paper)}.g{color:var(--lime)}
+.hero p.lead{max-width:500px;margin-top:28px;color:#d0d8d1;font-size:17px}
+.btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn2{border:3px solid var(--paper);padding:11px 20px;font-weight:700;font-size:14px;transition:.2s}
+.btn2:hover{background:var(--paper);color:var(--ink)}
+.collage{position:relative;min-height:600px}
+.ph{position:absolute;border:3px solid var(--ink);box-shadow:11px 11px 0 var(--ink);overflow:hidden;background:var(--f3)}
+.ph.a{width:76%;height:430px;right:0;top:0;transform:rotate(1.5deg)}
+.ph.b{width:50%;height:210px;left:0;bottom:30px;transform:rotate(-3deg);background:var(--paper);padding:7px;z-index:3;box-shadow:9px 9px 0 var(--ink)}
+.ph.b div{height:100%;background:var(--f3)}
+.sticker{position:absolute;left:-8px;top:300px;z-index:4;background:var(--lime);color:var(--ink);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:10px 14px;font-size:11px;font-weight:500;transform:rotate(-5deg);animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{50%{transform:rotate(-2deg) translateY(-7px)}}
+.badge{position:absolute;right:-6px;bottom:0;z-index:4;background:var(--paper);color:var(--ink);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:12px 16px;text-align:center}
+.badge b{display:block;font-size:34px;line-height:1;letter-spacing:-.04em}.badge small{font-size:10px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:36px}.collage{min-height:470px}.ph.a{height:330px}.ph.b{height:160px}.sticker{top:230px}}
+
+/* MARQUEE */
+.marq{overflow:hidden;background:var(--lime);color:var(--ink);border-block:3px solid var(--ink);transform:rotate(-1deg) scale(1.03);margin:40px 0 110px}
+.mt{display:flex;gap:38px;width:max-content;padding:14px 0;font-weight:700;font-size:18px;text-transform:uppercase;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{margin-bottom:130px}
+.sh{display:grid;grid-template-columns:.28fr 1fr;gap:28px;margin-bottom:46px}
+.sn{color:var(--lime);font-size:12px;padding-top:12px}
+h2.t{font-size:clamp(38px,6vw,76px);line-height:.92;letter-spacing:-.05em;max-width:820px}
+.sd{margin-top:20px;max-width:620px;color:var(--muted);font-size:16px}
+@media(max-width:760px){.sh{grid-template-columns:1fr;gap:8px}}
+
+/* EXPLORER */
+.exp{display:grid;grid-template-columns:.36fr 1fr;border:3px solid var(--ink);box-shadow:11px 11px 0 var(--ink);background:var(--f2)}
+.tabs{display:flex;flex-direction:column;border-right:3px solid var(--ink)}
+.tab{background:none;border:0;border-bottom:2px solid rgba(7,20,15,.6);color:var(--paper);text-align:left;padding:20px 22px;cursor:pointer;font-family:inherit;font-size:19px;font-weight:700;letter-spacing:-.02em;display:flex;gap:14px;align-items:baseline;transition:.2s}
+.tab:last-child{border-bottom:0}
+.tab small{font-family:"DM Mono",monospace;font-size:11px;color:var(--lime);font-weight:400}
+.tab:hover{background:var(--f3)}
+.tab.on{background:var(--lime);color:var(--ink)}.tab.on small{color:var(--ink)}
+.panel{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.pimg{position:relative;border-right:3px solid var(--ink);background:var(--f3);overflow:hidden}
+.pimg .glyph{position:absolute;inset:0;display:grid;place-items:center;font-size:150px;font-weight:700;color:var(--lime);letter-spacing:-.06em}
+.pimg img{position:relative}
+.ptag{position:absolute;left:0;top:0;z-index:2;background:var(--lime);color:var(--ink);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:10px 15px;font-size:11px}
+.pbody{padding:34px 30px}
+.pbody h3{font-size:clamp(32px,4vw,50px);line-height:.95;letter-spacing:-.05em}
+.pbody .lead2{margin:16px 0 22px;color:#d0d8d1}
+.row{border-top:2px solid rgba(242,240,223,.3);padding:14px 0}
+.row b{display:block;color:var(--lime);font-family:"DM Mono",monospace;font-size:11px;font-weight:500;margin-bottom:4px}
+.row p{font-size:14px;color:#c6d1ca}
+.fade{animation:fd .45s ease}
+@keyframes fd{from{opacity:0;transform:translateY(12px)}}
+@media(max-width:900px){.exp{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:3px solid var(--ink)}.tab{white-space:nowrap;border-bottom:0;border-right:2px solid rgba(7,20,15,.6);padding:16px 18px;font-size:16px}.panel{grid-template-columns:1fr}.pimg{height:280px;border-right:0;border-bottom:3px solid var(--ink)}}
+
+/* BIG IDEA */
+.feat{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.fimg{border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(-1.5deg);height:540px;overflow:hidden;background:var(--f3)}
+.ftag{display:inline-block;border:1px solid var(--lime);color:var(--lime);padding:7px 11px;font-size:10px;margin-bottom:22px}
+.fh{font-size:clamp(40px,5.2vw,72px);line-height:.9;letter-spacing:-.05em}.fh span{color:var(--lime)}
+.ft{margin-top:26px;color:var(--muted);max-width:540px}
+.ft+.ft{margin-top:14px}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.fimg{height:380px}}
+
+/* IMPACT */
+.impact{background:var(--paper);color:var(--ink);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink);padding:52px 40px 30px}
+.impact h2{font-size:clamp(40px,6vw,74px);line-height:.9;letter-spacing:-.05em;max-width:760px;margin-bottom:46px}
+.ig{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.ii{padding:24px 18px;border-right:2px solid var(--ink)}.ii:last-child{border:0}
+.in{font-size:clamp(36px,5vw,58px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.il{margin-top:10px;font-size:13px;line-height:1.4}
+.src{margin-top:16px;font-size:10px;opacity:.7}
+@media(max-width:860px){.impact{padding:34px 22px 22px}.ig{grid-template-columns:1fr 1fr}.ii:nth-child(2){border-right:0}.ii:nth-child(n+3){border-top:2px solid var(--ink)}}
+
+/* FAQ */
+.faq{max-width:860px;margin-left:auto}
+details{border-top:2px solid rgba(242,240,223,.35);padding:22px 0}
+details:last-child{border-bottom:2px solid rgba(242,240,223,.35)}
+summary{list-style:none;cursor:pointer;font-size:22px;font-weight:700;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--lime);font-size:28px;line-height:1;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:14px;color:var(--muted);max-width:680px}
+
+/* FINAL */
+.final{background:var(--lime);color:var(--ink);border:3px solid var(--ink);box-shadow:14px 14px 0 var(--ink);padding:70px 54px;position:relative;overflow:hidden;margin-bottom:100px}
+.final::after{content:"↗";position:absolute;right:34px;bottom:-40px;font-size:250px;font-weight:700;opacity:.1}
+.final h2{font-size:clamp(50px,8vw,108px);line-height:.82;letter-spacing:-.06em;max-width:900px}
+.final p{max-width:540px;margin-top:26px;font-size:16px}
+.final .cta{display:inline-block;margin-top:30px;background:var(--ink);color:var(--lime);box-shadow:5px 5px 0 var(--forest)}
+@media(max-width:760px){.final{padding:46px 24px}}
+
+footer{border-top:1px solid rgba(242,240,223,.3);padding:30px 0 46px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#91a197;font-size:11px}
+footer b{color:var(--paper)}footer span{color:var(--lime)}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">VERDANT<span>//</span>TECH</a>
+  <nav class="links mono"><a href="#technologies">TECHNOLOGIES</a><a href="#idea">APPROACH</a><a href="#impact">IMPACT</a><a href="#faq">FAQ</a></nav>
+  <a class="cta mono" href="#technologies">EXPLORE ↗</a>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+<section class="hero" style="margin-bottom:0">
+  <div>
+    <div class="kick mono">TECHNOLOGY / PLANET / FUTURE</div>
+    <h1>BUILD<br><span class="o">BETTER.</span><br>LIVE<br><span class="g">GREENER.</span></h1>
+    <p class="lead">Eco-friendly technology is about designing smarter systems that use less, waste less and give more back to the planet.</p>
+    <div class="btns"><a class="cta" href="#technologies">EXPLORE TECHNOLOGIES ↗</a><a class="btn2" href="#impact">SEE THE IMPACT</a></div>
+  </div>
+  <div class="collage">
+    <div class="ph a"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=85" alt="Solar panels under a clear sky" onerror="this.remove()"></div>
+    <div class="sticker mono">ENERGY / SUN / FUTURE</div>
+    <div class="ph b"><div><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=85" alt="Wind turbines on green hills" onerror="this.remove()"></div></div>
+    <div class="badge mono"><b>06</b><small>CLEAN<br>TECHNOLOGIES</small></div>
+  </div>
+</section>
+</div>
+
+<div class="marq"><div class="mt"><span>Renewable Energy</span><span>✦</span><span>Circular Design</span><span>✦</span><span>Clean Transport</span><span>✦</span><span>Green Hydrogen</span><span>✦</span><span>Smart Grids</span><span>✦</span><span>Renewable Energy</span><span>✦</span><span>Circular Design</span><span>✦</span><span>Clean Transport</span><span>✦</span><span>Green Hydrogen</span><span>✦</span><span>Smart Grids</span><span>✦</span></div></div>
+
+<div class="wrap">
+<section id="technologies">
+  <div class="sh rv"><div class="sn mono">01 / TECHNOLOGIES</div><div><h2 class="t">SIX TECHNOLOGIES REWIRING THE ECONOMY.</h2><p class="sd">Select a technology to see how it works, what it offers and the challenges still to solve.</p></div></div>
+  <div class="exp rv">
+    <div class="tabs" id="tabs"></div>
+    <div class="panel" id="panel"></div>
+  </div>
+</section>
+
+<section id="idea">
+  <div class="feat">
+    <div class="fimg rv"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=85" alt="Sunlight through a green forest" onerror="this.remove()"></div>
+    <div class="rv">
+      <div class="ftag mono">OUR APPROACH</div>
+      <h2 class="fh">TECHNOLOGY SHOULD NOT <span>FIGHT</span> NATURE.</h2>
+      <p class="ft">Sustainable technology is more than replacing one machine with another. It means redesigning the whole system: how energy is generated, how products are made, how cities move and what happens when things reach the end of their life.</p>
+      <p class="ft">The future is not technology versus nature. It is technology designed around nature.</p>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="impact rv">
+    <h2>THE FUTURE IS MEASURED BY WHAT WE LEAVE BEHIND.</h2>
+    <div class="ig">
+      <div class="ii"><div class="in">~<span data-c="90">0</span>%</div><div class="il">fall in the cost of solar electricity since 2010</div></div>
+      <div class="ii"><div class="in">~<span data-c="23">0</span>%</div><div class="il">of energy-related CO₂ emissions come from transport</div></div>
+      <div class="ii"><div class="in"><span data-c="37">0</span>%</div><div class="il">of energy-related CO₂ comes from buildings and construction</div></div>
+      <div class="ii"><div class="in"><span data-c="62">0</span> Mt</div><div class="il">of e-waste generated worldwide in 2022, under a quarter documented as recycled</div></div>
+    </div>
+    <p class="src mono">SOURCES: IRENA, IEA, UNEP, UN GLOBAL E-WASTE MONITOR 2024. FIGURES ROUNDED.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="sh rv"><div class="sn mono">02 / FAQ</div><div><h2 class="t">COMMON QUESTIONS.</h2></div></div>
+  <div class="faq rv">
+    <details><summary>Is renewable energy reliable?</summary><p>Individual sources vary with weather, but grids combine solar, wind, storage, demand management and long-distance transmission to keep supply stable. Diversity and storage are what make a high renewable share dependable.</p></details>
+    <details><summary>Are electric vehicles really cleaner?</summary><p>Over their lifetime, EVs typically produce fewer emissions than combustion cars, even after accounting for battery manufacturing. The advantage grows as the electricity grid gets cleaner.</p></details>
+    <details><summary>What is a circular economy?</summary><p>A system where products are designed to last, be repaired, reused and remanufactured, and where materials are recovered at end of life instead of discarded.</p></details>
+    <details><summary>What can individuals do?</summary><p>Choose efficient appliances and LED lighting, use public or electric transport, repair rather than replace, recycle electronics responsibly, and where possible switch to a renewable electricity supply.</p></details>
+  </div>
+</section>
+
+<section class="final rv" style="margin-bottom:100px">
+  <div class="mono" style="font-size:11px;margin-bottom:20px">03 / THE NEXT STEP</div>
+  <h2>MAKE THE FUTURE<br>WORTH LIVING.</h2>
+  <p>Sustainable technology is a collection of ideas, systems and choices that move society toward a cleaner relationship with the planet.</p>
+  <a class="cta mono" href="#technologies">START EXPLORING ↗</a>
+</section>
+</div>
+</main>
+
+<div class="wrap"><footer class="mono"><b>VERDANT<span>//</span>TECH</b><div>ECO-FRIENDLY TECHNOLOGY / <span>2026</span></div><div>DESIGNED FOR A LIVING PLANET.</div></footer></div>
+
+<script>
+var T=[
+{k:"Solar Energy",tag:"PHOTOVOLTAICS",img:"https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1000&q=85",lead:"Photovoltaic panels turn sunlight directly into electricity with no fuel and no moving parts.",how:"Semiconductor cells release electrons when struck by light. The resulting direct current is converted by an inverter for homes and the grid.",ben:"Very low running costs, scales from a single rooftop to utility-scale plants, and costs have fallen dramatically over the past decade.",ch:"Output changes with daylight and weather, so it works best alongside storage and flexible grids."},
+{k:"Wind Power",tag:"TURBINES",img:"https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=85",lead:"Modern turbines capture moving air and convert it into clean electricity, on land and at sea.",how:"Wind turns the blades, which drive a generator. Taller towers and longer blades reach stronger, steadier wind.",ben:"High output per site, offshore wind provides consistent generation, and land around turbines can still be farmed.",ch:"Grid connections, careful siting and end-of-life blade recycling need long-term planning."},
+{k:"Electric Mobility",tag:"EV + CHARGING",img:"https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=85",lead:"Electric motors and rechargeable batteries are changing how people and goods move.",how:"Batteries store electricity that drives an electric motor. Regenerative braking recovers energy that would otherwise be lost as heat.",ben:"No tailpipe emissions, cleaner urban air, quieter streets and lower maintenance than combustion engines.",ch:"Charging access and responsible sourcing and recycling of battery materials."},
+{k:"Circular Technology",tag:"REUSE + RECOVERY",img:"https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=85",lead:"Instead of make, use, dispose, circular systems keep products and materials in use for as long as possible.",how:"Design for durability and repair, then reuse, remanufacture and recycle. Advanced processes recover metals from batteries and electronics.",ben:"Less waste, lower demand for raw materials and reduced emissions from mining and manufacturing.",ch:"Requires product design standards, collection systems and economics that reward repair."},
+{k:"Green Hydrogen",tag:"ELECTROLYSIS",glyph:"H₂",lead:"Hydrogen made from water using renewable electricity can decarbonise sectors that are hard to electrify.",how:"An electrolyser splits water into hydrogen and oxygen. Powered by wind or solar, the process releases no carbon dioxide.",ben:"A clean fuel and feedstock for steel, fertiliser, shipping and long-duration energy storage.",ch:"High production cost and energy losses, so it is best used where direct electrification is impractical."},
+{k:"Smart Grids & Storage",tag:"BATTERIES + DATA",glyph:"⚡",lead:"Digital grids and storage balance supply and demand in real time as more renewable power comes online.",how:"Sensors and software forecast demand and shift usage, while batteries and pumped hydro store surplus energy for later.",ben:"A more reliable, efficient grid that can support a much higher share of renewable generation.",ch:"Upfront investment, cybersecurity and market rules that reward flexibility."}
+];
+var tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
+T.forEach(function(t,i){var b=document.createElement('button');b.className='tab';b.innerHTML='<small>0'+(i+1)+'</small>'+t.k;b.onclick=function(){show(i)};tabs.appendChild(b)});
+function show(i){
+ var t=T[i];
+ [].forEach.call(tabs.children,function(b,j){b.classList.toggle('on',j===i)});
+ panel.className='panel fade';void panel.offsetWidth;
+ panel.innerHTML='<div class="pimg"><div class="ptag mono">'+t.tag+'</div>'+(t.glyph?'<div class="glyph">'+t.glyph+'</div>':'<img src="'+t.img+'" alt="'+t.k+'" onerror="this.remove()">')+'</div>'+
+ '<div class="pbody"><h3>'+t.k.toUpperCase()+'</h3><p class="lead2">'+t.lead+'</p><div class="row"><b>HOW IT WORKS</b><p>'+t.how+'</p></div><div class="row"><b>KEY BENEFITS</b><p>'+t.ben+'</p></div><div class="row"><b>CHALLENGES</b><p>'+t.ch+'</p></div></div>';
+}
+show(0);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');e.target.querySelectorAll('[data-c]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+function count(el){var t=+el.dataset.c,s=null;(function f(ts){if(!s)s=ts;var p=Math.min((ts-s)/1400,1);el.textContent=Math.round(t*p);if(p<1)requestAnimationFrame(f)})(performance.now())}
+</script>
+</body>
+</html>
